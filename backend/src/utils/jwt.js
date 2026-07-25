@@ -71,7 +71,8 @@ export const generateTokenPair = (user) => {
       _id: user._id.toString(),
       email: user.email,
       username: user.username,
-      roles: user.roles
+      roles: user.roles,
+      sellerExpiresAt: user.sellerExpiresAt || null,
     };
 
     const accessToken = generateAccessToken(payload);

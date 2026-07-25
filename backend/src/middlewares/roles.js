@@ -145,7 +145,7 @@ export const isOrderParticipant = async (req, res, next) => {
  * Middleware kiểm tra seller role có còn hợp lệ không (chưa hết hạn)
  * Sử dụng cho các hành động yêu cầu seller role như đăng sản phẩm mới
  */
-export const checkSellerExpiration = (req, res, next) => {
+export const checkSellerExpiration = async (req, res, next) => {
   try {
     if (!req.user) {
       return next(
@@ -169,11 +169,25 @@ export const checkSellerExpiration = (req, res, next) => {
       );
     }
 
+    // Live verification from database if needed or check token payload
+    let expiresAt = req.user.sellerExpiresAt;
+    if (!expiresAt) {
+      const { User } = await import("../models/index.js");
+      const dbUser = await User.findById(req.user._id).select("sellerExpiresAt roles").lean();
+      if (!dbUser?.roles?.includes("seller")) {
+        return next(
+          new AppError(
+            "Bạn cần quyền seller để thực hiện hành động này",
+            403,
+            ERROR_CODES.FORBIDDEN
+          )
+        );
+      }
+      expiresAt = dbUser?.sellerExpiresAt;
+    }
+
     // Kiểm tra seller expiration
-    if (
-      req.user.sellerExpiresAt &&
-      new Date(req.user.sellerExpiresAt) < new Date()
-    ) {
+    if (expiresAt && new Date(expiresAt) < new Date()) {
       return next(
         new AppError(
           "Quyền seller của bạn đã hết hạn. Vui lòng yêu cầu gia hạn.",

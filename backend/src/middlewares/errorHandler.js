@@ -23,6 +23,18 @@ export const errorHandler = (err, req, res, next) => {
       url: req.originalUrl
     });
 
+    // Xử lý Zod validation errors
+    if (err.isValidationError) {
+      console.error('[ERROR HANDLER] Zod ValidationError:', err.errors);
+      return res.status(400).json({
+        status: 'error',
+        statusCode: 400,
+        code: 'VALIDATION_ERROR',
+        message: err.message,
+        errors: err.errors
+      });
+    }
+
     // Xử lý MongoDB validation errors
     if (err.name === 'ValidationError') {
       const messages = Object.values(err.errors).map(e => e.message);
@@ -32,7 +44,7 @@ export const errorHandler = (err, req, res, next) => {
         statusCode: 400,
         code: 'VALIDATION_ERROR',
         message: 'Dữ liệu nhập không hợp lệ',
-        errors: messages
+        errors: messages.map(msg => ({ path: 'general', msg }))
       });
     }
 
