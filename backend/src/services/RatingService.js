@@ -120,7 +120,7 @@ export class RatingService {
             totalCount: stats[0].totalCount,
             score:
               stats[0].totalCount > 0
-                ? (stats[0].countPositive / stats[0].totalCount) * 100
+                ? stats[0].countPositive / stats[0].totalCount
                 : 0,
           }
         : {

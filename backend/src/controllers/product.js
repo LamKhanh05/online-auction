@@ -138,18 +138,12 @@ export const sellerDeleteProduct = async (req, res, next) => {
     // Get all bidders who participated
     let bidders = [];
     if (auction) {
-      const bids = await Bid.find({ auctionId: auction._id })
-        .populate('bidderId', 'email username fullName')
-        .lean();
-
-      // Get unique bidders
-      const uniqueBidderIds = [...new Set(bids.map(bid => bid.bidderId._id.toString()))];
-      bidders = bids
-        .filter(bid => uniqueBidderIds.includes(bid.bidderId._id.toString()))
-        .map(bid => bid.bidderId)
-        .filter((bidder, index, self) =>
-          index === self.findIndex(b => b._id.toString() === bidder._id.toString())
-        );
+      const uniqueBidderIds = await Bid.distinct('bidderId', { auctionId: auction._id });
+      if (uniqueBidderIds.length > 0) {
+        bidders = await User.find({ _id: { $in: uniqueBidderIds } })
+          .select('email username fullName')
+          .lean();
+      }
     }
 
     // Delete all related data

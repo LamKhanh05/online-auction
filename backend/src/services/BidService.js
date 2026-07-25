@@ -627,13 +627,19 @@ export class BidService {
     let autoExtended = false;
     let newEndTime = auction.endAt;
 
-    if (autoExtendEnabled && bidsToCreate.length > 0) {
+    if (autoExtendEnabled && auction.autoExtendEnabled !== false && bidsToCreate.length > 0) {
       const thresholdMinutes = settings.autoExtendThreshold ?? 5;
       const extendMinutes = settings.autoExtendDuration ?? 10;
+      const maxAutoExtend = settings.maxAutoExtendCount ?? 3;
+      const currentExtendCount = auction.autoExtendCount || 0;
 
       const timeLeft = new Date(auction.endAt).getTime() - now.getTime();
 
-      if (timeLeft > 0 && timeLeft <= thresholdMinutes * 60 * 1000) {
+      if (
+        currentExtendCount < maxAutoExtend &&
+        timeLeft > 0 &&
+        timeLeft <= thresholdMinutes * 60 * 1000
+      ) {
         newEndTime = new Date(
           new Date(auction.endAt).getTime() + extendMinutes * 60 * 1000
         );

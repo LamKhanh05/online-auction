@@ -136,8 +136,10 @@ productSchema.index({
 });
 // API 1.3: Query theo danh mục + thời gian
 productSchema.index({ categoryId: 1, createdAt: -1 });
+productSchema.index({ isActive: 1, categoryId: 1 });
 // Lọc theo người bán
 productSchema.index({ sellerId: 1 });
+productSchema.index({ sellerId: 1, isActive: 1 });
 // Lọc theo trạng thái active
 productSchema.index({ isActive: 1 });
 // API 1.2: Sort theo views (Trending)

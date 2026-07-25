@@ -110,7 +110,7 @@ const auctionSchema = new mongoose.Schema({
    */
   sellerExtendCount: {
     type: Number,
-    initial: 0,
+    default: 0,
     max: 3,
   },
 });

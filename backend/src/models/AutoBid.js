@@ -34,6 +34,7 @@ const autoBidSchema = new mongoose.Schema({
 autoBidSchema.index({ auctionId: 1, maxAmount: -1 });
 autoBidSchema.index({ bidderId: 1 });
 autoBidSchema.index({ auctionId: 1, bidderId: 1 }, { unique: true });
+autoBidSchema.index({ auctionId: 1, active: 1, maxAmount: -1, updatedAt: 1 });
 
 // Update updatedAt on save
 autoBidSchema.pre('save', function() {

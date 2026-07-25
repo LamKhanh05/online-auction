@@ -67,8 +67,35 @@ export class ProductService {
           auctionMatch.currentPrice.$lte = parseInt(maxPrice);
       }
 
+      // 2. Early filtering on Products to leverage indexes
+      if (categoryIds.length > 0 || search) {
+        const productMatch = { isActive: true };
+        if (categoryIds.length > 0) {
+          productMatch.categoryId = { $in: categoryIds };
+        }
+        if (search) {
+          productMatch.title = { $regex: search, $options: "i" };
+        }
+        
+        const matchingProducts = await Product.find(productMatch).select("_id").lean();
+        const productIds = matchingProducts.map((p) => p._id);
+        
+        if (productIds.length === 0) {
+          return {
+            products: [],
+            pagination: {
+              total: 0,
+              page,
+              limit,
+              pages: 0,
+            },
+          };
+        }
+        auctionMatch.productId = { $in: productIds };
+      }
+
       const pipeline = [
-        // 1. Match active auctions (and price)
+        // 1. Match active auctions (and price/product IDs)
         { $match: auctionMatch },
 
         // 2. Lookup existing product
@@ -93,17 +120,11 @@ export class ProductService {
           },
         },
 
-        // 3. Unwind product and filter active products + Category + Search
+        // 3. Unwind product and filter active products
         { $unwind: "$product" },
         {
           $match: {
             "product.isActive": true,
-            ...(categoryIds.length > 0 && {
-              "product.categoryId": { $in: categoryIds },
-            }),
-            ...(search && {
-              "product.title": { $regex: search, $options: "i" },
-            }),
           },
         },
 

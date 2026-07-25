@@ -177,7 +177,8 @@ export class AuctionService {
       .populate('productId', 'title primaryImageUrl')
       .populate('currentHighestBidderId', 'username')
       .sort({ endAt: -1 })
-      .limit(limit);
+      .limit(limit)
+      .lean();
   }
 
   /**
@@ -192,7 +193,8 @@ export class AuctionService {
       .populate('productId', 'title primaryImageUrl')
       .populate('currentHighestBidderId', 'username')
       .sort({ bidCount: -1 })
-      .limit(limit);
+      .limit(limit)
+      .lean();
 
     return auctions;
   }
@@ -306,7 +308,8 @@ export class AuctionService {
       .populate('productId', 'title primaryImageUrl')
       .populate('currentHighestBidderId', 'username')
       .sort({ currentPrice: -1 })
-      .limit(limit);
+      .limit(limit)
+      .lean();
 
     return auctions;
   }
@@ -380,7 +383,8 @@ export class AuctionService {
       .populate('currentHighestBidderId', 'username')
       .sort(sortOption)
       .skip((page - 1) * limit)
-      .limit(limit);
+      .limit(limit)
+      .lean();
 
     const total = await Auction.countDocuments(query);
 

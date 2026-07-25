@@ -53,5 +53,6 @@ bidSchema.index({ auctionId: 1, createdAt: -1 });
 bidSchema.index({ bidderId: 1, auctionId: 1 });
 bidSchema.index({ productId: 1, createdAt: -1 });
 bidSchema.index({ auctionId: 1, amount: -1 });
+bidSchema.index({ auctionId: 1, isValid: 1, createdAt: -1 });
 
 export default mongoose.model('Bid', bidSchema);

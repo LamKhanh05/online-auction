@@ -76,7 +76,7 @@ const userSchema = new mongoose.Schema({
       type: Number,
       default: 0,
       min: 0,
-      max: 100,
+      max: 1,
     },
     _id: false,
   },
@@ -119,6 +119,7 @@ const userSchema = new mongoose.Schema({
 
 // Indexes (email và username đã có unique: true trong schema, không cần định nghĩa lại)
 userSchema.index({ roles: 1 });
+userSchema.index({ roles: 1, sellerExpiresAt: 1 });
 userSchema.index({ "ratingSummary.score": -1 });
 
 // Update updatedAt on save
