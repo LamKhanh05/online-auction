@@ -3,176 +3,86 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <title>Đấu Giá Kết Thúc - Không Có Người Mua</title>
-    <style>
-        body {
-            font-family: 'Roboto', 'Be Vietnam Pro', Helvetica, Arial, sans-serif;
-            background-color: #F3F4F6; /* Slate 100 */
-            margin: 0;
-            padding: 0;
-            color: #475569; /* Slate 600 */
-        }
-        .container {
-            max-width: 600px;
-            margin: 40px auto;
-            background-color: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .header {
-            background: linear-gradient(135deg, #64748B 0%, #475569 100%); /* Slate 500 to Slate 600 */
-            color: white;
-            padding: 32px 24px;
-            text-align: center;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-        }
-        .content {
-            padding: 32px 24px;
-        }
-        .info-box {
-            background-color: #FFFBEB; /* Amber 50 */
-            border-left: 4px solid #F59E0B; /* Amber 500 */
-            padding: 20px;
-            margin: 24px 0;
-            border-radius: 6px;
-        }
-        .product-box {
-            background-color: #F8FAFC; /* Slate 50 */
-            padding: 20px;
-            margin: 24px 0;
-            border-radius: 8px;
-            border: 1px solid #E2E8F0;
-        }
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid #E2E8F0;
-        }
-        .info-row:last-child {
-            border-bottom: none;
-        }
-        .label {
-            font-weight: 600;
-            color: #64748B;
-        }
-        .value {
-            color: #1E293B;
-            font-weight: 500;
-        }
-        .suggestions {
-            background-color: #F0F9FF; /* Sky 50 */
-            border: 1px solid #BAE6FD;
-            padding: 20px;
-            margin: 24px 0;
-            border-radius: 8px;
-        }
-        .suggestions h3 {
-            margin: 0 0 10px 0;
-            color: #0369A1; /* Sky 700 */
-            font-size: 16px;
-        }
-        .suggestions ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-        .suggestions li {
-            margin: 8px 0;
-            color: #334155;
-        }
-        .button {
-            display: inline-block;
-            padding: 14px 32px;
-            background-color: #3B82F6; /* Blue 500 */
-            color: white;
-            text-decoration: none;
-            border-radius: 9999px;
-            margin: 24px 0;
-            font-weight: 600;
-            transition: background-color 0.2s;
-        }
-        .button:hover {
-            background-color: #2563EB; /* Blue 600 */
-        }
-        .footer {
-            background-color: #F8FAFC;
-            padding: 24px;
-            text-align: center;
-            color: #94A3B8;
-            font-size: 12px;
-            border-top: 1px solid #E2E8F0;
-        }
-    </style>
+    <title>Đấu Giá Kết Thúc - Không Có Người Thắng</title>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Đấu Giá Kết Thúc</h1>
-        </div>
-        <div class="content">
-            <p>Xin chào <strong style="color: #1E293B;">{{sellerName}}</strong>,</p>
-            
-            <div class="info-box">
-                <p style="margin: 0; font-weight: 600; color: #D97706;">
-                    Cuộc đấu giá cho sản phẩm <strong>{{productTitle}}</strong> đã kết thúc nhưng không có người mua nào đặt giá.
-                </p>
-            </div>
+<body style="margin: 0; padding: 0; background-color: #F8FAFC; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-font-smoothing: antialiased; color: #334155;">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #F8FAFC; padding: 30px 10px;">
+        <tr>
+            <td align="center">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #E2E8F0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                    <!-- Header -->
+                    <tr>
+                        <td align="center" style="background: linear-gradient(135deg, #64748B 0%, #475569 100%); padding: 32px 24px; color: #ffffff;">
+                            <div style="font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; opacity: 0.9;">🔨 Sàn Đấu Giá Online</div>
+                            <h1 style="margin: 0; font-size: 24px; font-weight: 700; color: #ffffff; line-height: 1.3;">Đấu Giá Kết Thúc (Không Có Người Đặt Giá)</h1>
+                        </td>
+                    </tr>
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 32px 24px;">
+                            <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.6; color: #334155;">Xin chào <strong style="color: #0F172A;">{{sellerName}}</strong>,</p>
+                            <p style="margin: 0 0 24px 0; font-size: 15px; line-height: 1.6; color: #475569;">Phiên đấu giá cho sản phẩm <strong>{{productTitle}}</strong> của bạn đã hết hạn nhưng chưa nhận được lượt đặt giá nào.</p>
 
-            <div class="product-box">
-                <h2 style="margin: 0 0 15px 0; color: #475569; font-size: 18px;">Thông Tin Đấu Giá</h2>
-                <div class="info-row">
-                    <span class="label">Sản phẩm:</span>
-                    <span class="value">{{productTitle}}</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Giá khởi điểm:</span>
-                    <span class="value">{{startPrice}} VNĐ</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Thời gian bắt đầu:</span>
-                    <span class="value">{{startTime}}</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Thời gian kết thúc:</span>
-                    <span class="value">{{endTime}}</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Số lượt xem:</span>
-                    <span class="value">{{viewCount}}</span>
-                </div>
-            </div>
+                            <!-- Information Box -->
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #F1F5F9; border-radius: 8px; border: 1px solid #E2E8F0; margin-bottom: 24px;">
+                                <tr>
+                                    <td style="padding: 20px;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="left" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #64748B;">Sản phẩm:</td>
+                                                <td align="right" style="padding: 6px 0; font-size: 14px; font-weight: 700; color: #0F172A;">{{productTitle}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #64748B;">Giá khởi điểm:</td>
+                                                <td align="right" style="padding: 6px 0; font-size: 14px; color: #475569;">{{startPrice}} VNĐ</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #64748B;">Thời gian bắt đầu:</td>
+                                                <td align="right" style="padding: 6px 0; font-size: 14px; color: #475569;">{{startTime}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #64748B;">Thời gian kết thúc:</td>
+                                                <td align="right" style="padding: 6px 0; font-size: 14px; color: #475569;">{{endTime}}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
 
-            <div class="suggestions">
-                <h3>Gợi Ý Để Cải Thiện:</h3>
-                <ul>
-                    <li>Xem xét điều chỉnh giá khởi điểm thấp hơn</li>
-                    <li>Cải thiện mô tả và hình ảnh sản phẩm</li>
-                    <li>Chọn thời gian đấu giá phù hợp hơn</li>
-                    <li>Quảng bá sản phẩm trên nhiều kênh hơn</li>
-                </ul>
-            </div>
+                            <p style="margin: 0 0 24px 0; font-size: 14px; line-height: 1.5; color: #64748B; text-align: center;">
+                                Bạn có thể xem lại thông tin sản phẩm và điều chỉnh giá khởi điểm hoặc thời gian đấu giá để đăng lại sản phẩm.
+                            </p>
 
-            <p style="text-align: center; color: #475569;">
-                Bạn có thể tạo cuộc đấu giá mới cho sản phẩm này hoặc chỉnh sửa thông tin sản phẩm.
-            </p>
+                            <!-- Button -->
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 24px;">
+                                <tr>
+                                    <td align="center">
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="center" style="background-color: #475569; border-radius: 50px; padding: 14px 32px;">
+                                                    <a href="{{productUrl}}" target="_blank" style="font-size: 15px; font-weight: 700; color: #ffffff; text-decoration: none; display: inline-block;">Quản Lý & Đăng Lại Sản Phẩm &rarr;</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
 
-            <div style="text-align: center;">
-                <a href="{{productUrl}}" class="button">Xem Sản Phẩm</a>
-            </div>
-        </div>
-        <div class="footer">
-            <p>Nếu bạn cần hỗ trợ, vui lòng liên hệ: support@auctionplatform.com</p>
-            <p>&copy; 2025 Auction Platform. All rights reserved.</p>
-        </div>
-    </div>
+                            <p style="margin: 0; font-size: 13px; color: #94A3B8; text-align: center; line-height: 1.5;">
+                                Hoặc truy cập liên kết: <a href="{{productUrl}}" style="color: #475569; text-decoration: none;">{{productUrl}}</a>
+                            </p>
+                        </td>
+                    </tr>
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center" style="background-color: #F1F5F9; padding: 20px; border-top: 1px solid #E2E8F0; font-size: 12px; color: #94A3B8; line-height: 1.5;">
+                            <p style="margin: 0 0 4px 0;">Email này được gửi tự động từ hệ thống Sàn Đấu Giá Online. Vui lòng không trả lời trực tiếp.</p>
+                            <p style="margin: 0;">&copy; 2026 Sàn Đấu Giá Online. All rights reserved.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

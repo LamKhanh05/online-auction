@@ -3,209 +3,105 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <title>Đấu Giá Kết Thúc - Thông Báo Người Bán</title>
-    <style>
-        body {
-            font-family: 'Roboto', 'Be Vietnam Pro', Helvetica, Arial, sans-serif;
-            background-color: #F3F4F6; /* Slate 100 */
-            margin: 0;
-            padding: 0;
-            color: #475569; /* Slate 600 */
-        }
-        .container {
-            max-width: 600px;
-            margin: 40px auto;
-            background-color: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .header {
-            background: linear-gradient(135deg, #2563EB 0%, #4F46E5 100%); /* Blue 600 to Indigo 600 */
-            color: white;
-            padding: 32px 24px;
-            text-align: center;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-        }
-        .content {
-            padding: 32px 24px;
-        }
-        .success-box {
-            background-color: #EFF6FF; /* Blue 50 */
-            border-left: 4px solid #3B82F6; /* Blue 500 */
-            padding: 20px;
-            margin: 24px 0;
-            border-radius: 6px;
-        }
-        .winner-info {
-            background-color: #FFF7ED; /* Orange 50 (Keep slightly distinct for winner info but subtle) */
-            border: 1px solid #FDBA74; /* Orange 300 */
-            padding: 20px;
-            margin: 24px 0;
-            border-radius: 8px;
-        }
-        .product-box {
-            background-color: #F8FAFC; /* Slate 50 */
-            padding: 20px;
-            margin: 24px 0;
-            border-radius: 8px;
-            border: 1px solid #E2E8F0;
-        }
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid #E2E8F0; /* Slate 200 */
-        }
-        .info-row:last-child {
-            border-bottom: none;
-        }
-        .label {
-            font-weight: 600;
-            color: #64748B; /* Slate 500 */
-        }
-        .value {
-            color: #1E293B; /* Slate 800 */
-            font-weight: 500;
-        }
-        .price {
-            color: #3B82F6; /* Blue 500 */
-            font-size: 22px;
-            font-weight: 700;
-        }
-        .next-steps {
-            background-color: #F0F9FF; /* Sky 50 */
-            padding: 20px;
-            margin: 24px 0;
-            border-radius: 8px;
-            border-left: 4px solid #0EA5E9; /* Sky 500 */
-        }
-        .next-steps h3 {
-            margin: 0 0 10px 0;
-            color: #0369A1; /* Sky 700 */
-        }
-        .next-steps ol {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-        .next-steps li {
-            margin: 8px 0;
-            color: #334155;
-        }
-        .button {
-            display: inline-block;
-            padding: 14px 32px;
-            background-color: #3B82F6; /* Blue 500 */
-            color: white;
-            text-decoration: none;
-            border-radius: 9999px;
-            margin: 24px 0;
-            font-weight: 600;
-            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5);
-            transition: background-color 0.2s;
-        }
-        .button:hover {
-            background-color: #2563EB;
-        }
-        .footer {
-            background-color: #F8FAFC; /* Slate 50 */
-            padding: 24px;
-            text-align: center;
-            color: #94A3B8; /* Slate 400 */
-            font-size: 12px;
-            border-top: 1px solid #E2E8F0;
-        }
-    </style>
+    <title>Đấu Giá Thành Công - Có Người Thắng</title>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Đấu Giá Thành Công!</h1>
-        </div>
-        <div class="content">
-            <p>Xin chào <strong style="color: #1E293B;">{{sellerName}}</strong>,</p>
-            
-            <div class="success-box">
-                <p style="margin: 0; font-weight: 600; color: #1E40AF;">
-                    Cuộc đấu giá cho sản phẩm <strong>{{productTitle}}</strong> đã kết thúc thành công!
-                </p>
-            </div>
+<body style="margin: 0; padding: 0; background-color: #F8FAFC; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-font-smoothing: antialiased; color: #334155;">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #F8FAFC; padding: 30px 10px;">
+        <tr>
+            <td align="center">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #E2E8F0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                    <!-- Header -->
+                    <tr>
+                        <td align="center" style="background: linear-gradient(135deg, #059669 0%, #10B981 100%); padding: 32px 24px; color: #ffffff;">
+                            <div style="font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; opacity: 0.9;">🔨 Sàn Đấu Giá Online</div>
+                            <h1 style="margin: 0; font-size: 24px; font-weight: 700; color: #ffffff; line-height: 1.3;">Đấu Giá Thành Công - Đã Có Người Thắng!</h1>
+                        </td>
+                    </tr>
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 32px 24px;">
+                            <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.6; color: #334155;">Xin chào <strong style="color: #0F172A;">{{sellerName}}</strong>,</p>
+                            <p style="margin: 0 0 24px 0; font-size: 15px; line-height: 1.6; color: #475569;">Phiên đấu giá cho sản phẩm <strong>{{productTitle}}</strong> đã kết thúc thành công với kết quả như sau:</p>
 
-            <div class="winner-info">
-                <h2 style="margin: 0 0 15px 0; color: #EA580C; font-size: 18px;">Thông Tin Người Thắng</h2>
-                <div class="info-row">
-                    <span class="label">Tên:</span>
-                    <span class="value">{{winnerName}}</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Email:</span>
-                    <span class="value">{{winnerEmail}}</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Số điện thoại:</span>
-                    <span class="value">{{winnerPhone}}</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Giá thắng:</span>
-                    <span class="value price">{{finalPrice}} VNĐ</span>
-                </div>
-            </div>
+                            <!-- Victory Price Banner -->
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 8px; margin-bottom: 24px;">
+                                <tr>
+                                    <td align="center" style="padding: 18px 20px;">
+                                        <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; color: #047857; letter-spacing: 0.5px; margin-bottom: 4px;">Giá Bán Cuối Cùng</div>
+                                        <div style="font-size: 26px; font-weight: 800; color: #059669;">{{finalPrice}} VNĐ</div>
+                                    </td>
+                                </tr>
+                            </table>
 
-            <div class="product-box">
-                <h2 style="margin: 0 0 15px 0; color: #475569; font-size: 18px;">Thông Tin Đấu Giá</h2>
-                <div class="info-row">
-                    <span class="label">Sản phẩm:</span>
-                    <span class="value">{{productTitle}}</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Giá khởi điểm:</span>
-                    <span class="value">{{startPrice}} VNĐ</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Giá cuối:</span>
-                    <span class="value price">{{finalPrice}} VNĐ</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Tổng lượt đặt giá:</span>
-                    <span class="value">{{totalBids}}</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Thời gian kết thúc:</span>
-                    <span class="value">{{endTime}}</span>
-                </div>
-            </div>
+                            <!-- Details Table -->
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #F1F5F9; border-radius: 8px; border: 1px solid #E2E8F0; margin-bottom: 24px;">
+                                <tr>
+                                    <td style="padding: 20px;">
+                                        <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; color: #64748B; margin-bottom: 12px; border-bottom: 1px solid #CBD5E1; padding-bottom: 6px;">Thống Kê Phiên Đấu Giá</div>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="left" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #64748B;">Giá khởi điểm:</td>
+                                                <td align="right" style="padding: 6px 0; font-size: 14px; color: #475569;">{{startPrice}} VNĐ</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #64748B;">Tổng số lượt đặt giá:</td>
+                                                <td align="right" style="padding: 6px 0; font-size: 14px; color: #475569;">{{totalBids}} lượt</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #64748B;">Thời gian kết thúc:</td>
+                                                <td align="right" style="padding: 6px 0; font-size: 14px; color: #475569;">{{endTime}}</td>
+                                            </tr>
+                                        </table>
 
-            <div class="next-steps">
-                <h3>Các Bước Tiếp Theo:</h3>
-                <ol>
-                    <li>Liên hệ với người thắng để sắp xếp giao hàng</li>
-                    <li>Chờ người mua thanh toán</li>
-                    <li>Chuẩn bị và đóng gói sản phẩm</li>
-                    <li>Giao hàng đúng hẹn</li>
-                    <li>Hoàn tất giao dịch và nhận thanh toán</li>
-                </ol>
-            </div>
+                                        <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; color: #64748B; margin: 16px 0 12px 0; border-bottom: 1px solid #CBD5E1; padding-bottom: 6px;">Thông Tin Người Mua (Người Thắng)</div>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="left" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #64748B;">Họ tên:</td>
+                                                <td align="right" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #0F172A;">{{winnerName}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #64748B;">Email:</td>
+                                                <td align="right" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #2563EB;">{{winnerEmail}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #64748B;">Số điện thoại:</td>
+                                                <td align="right" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #059669;">{{winnerPhone}}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
 
-            <div style="text-align: center;">
-                <a href="{{orderUrl}}" class="button">Xem Chi Tiết Đơn Hàng</a>
-            </div>
+                            <!-- Button -->
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 24px;">
+                                <tr>
+                                    <td align="center">
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="center" style="background-color: #059669; border-radius: 50px; padding: 14px 32px;">
+                                                    <a href="{{orderUrl}}" target="_blank" style="font-size: 15px; font-weight: 700; color: #ffffff; text-decoration: none; display: inline-block;">Quản Lý Đơn Hàng & Giao Dịch &rarr;</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
 
-            <p style="margin-top: 30px; font-size: 14px; color: #334155; background-color: #F1F5F9; padding: 15px; border-radius: 8px; text-align: center;">
-                <strong>Lưu ý:</strong> Vui lòng liên hệ với người mua trong vòng 24 giờ để sắp xếp giao hàng.
-            </p>
-        </div>
-        <div class="footer">
-            <p>Nếu bạn cần hỗ trợ, vui lòng liên hệ: support@auctionplatform.com</p>
-            <p>&copy; 2025 Auction Platform. All rights reserved.</p>
-        </div>
-    </div>
+                            <p style="margin: 0; font-size: 13px; color: #94A3B8; text-align: center; line-height: 1.5;">
+                                Hoặc truy cập liên kết: <a href="{{orderUrl}}" style="color: #059669; text-decoration: none;">{{orderUrl}}</a>
+                            </p>
+                        </td>
+                    </tr>
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center" style="background-color: #F1F5F9; padding: 20px; border-top: 1px solid #E2E8F0; font-size: 12px; color: #94A3B8; line-height: 1.5;">
+                            <p style="margin: 0 0 4px 0;">Email này được gửi tự động từ hệ thống Sàn Đấu Giá Online. Vui lòng không trả lời trực tiếp.</p>
+                            <p style="margin: 0;">&copy; 2026 Sàn Đấu Giá Online. All rights reserved.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

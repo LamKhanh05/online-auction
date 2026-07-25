@@ -1,10 +1,12 @@
+import DOMPurify from 'dompurify';
 import { formatDateTime } from './utils';
 
 export default function DescriptionTab({ description, descriptionHistory = [] }) {
   // Get current description - either from description prop or latest from history
-  const currentDescription = description || 
+  const rawDescription = description || 
     (descriptionHistory.length > 0 ? descriptionHistory[descriptionHistory.length - 1]?.text : null);
-  
+  const currentDescription = rawDescription ? DOMPurify.sanitize(rawDescription.replace(/\n/g, '<br/>')) : null;
+
   return (
     <div className="space-y-8">
       {/* Description Section */}
@@ -14,7 +16,7 @@ export default function DescriptionTab({ description, descriptionHistory = [] })
           {currentDescription ? (
             <div 
               className="whitespace-pre-wrap leading-relaxed"
-              dangerouslySetInnerHTML={{ __html: currentDescription.replace(/\n/g, '<br/>') }}
+              dangerouslySetInnerHTML={{ __html: currentDescription }}
             />
           ) : (
             <p className="text-muted-foreground italic">

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DOMPurify from "dompurify";
 import { X, Tag, Package, PlusCircle } from "lucide-react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -113,7 +114,7 @@ export default function UpdateProductDescription({
         </div>
         <div
           className="prose prose-invert max-w-none text-gray-300 [&>*]:text-gray-300 [&_h1]:text-white [&_h2]:text-white [&_h3]:text-white [&_strong]:text-white [&_a]:text-blue-400 [&_p]:text-gray-300 [&_div]:text-gray-300 [&_span]:text-gray-300 [&_li]:text-gray-300 [&_ul]:text-gray-300 [&_ol]:text-gray-300"
-          dangerouslySetInnerHTML={{ __html: currentDescription }}
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(currentDescription || "") }}
         />
       </div>
     );
@@ -155,7 +156,7 @@ export default function UpdateProductDescription({
           </label>
           <div
             className="p-4 bg-white/5 rounded-xl border border-white/10 prose prose-invert max-w-none max-h-60 overflow-y-auto text-gray-300 [&>*]:text-gray-300 [&_h1]:text-white [&_h2]:text-white [&_h3]:text-white [&_strong]:text-white [&_a]:text-blue-400 [&_p]:text-gray-300 [&_div]:text-gray-300 [&_span]:text-gray-300 [&_li]:text-gray-300 [&_ul]:text-gray-300 [&_ol]:text-gray-300 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-gray-600 [&::-webkit-scrollbar-thumb]:rounded"
-            dangerouslySetInnerHTML={{ __html: currentDescription }}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(currentDescription || "") }}
           />
           <p className="text-xs text-blue-400 mt-2 flex items-center gap-1">
             <span className="text-blue-500"></span> Thông tin mới sẽ được{" "}

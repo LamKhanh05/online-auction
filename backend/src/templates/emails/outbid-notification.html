@@ -3,152 +3,78 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <title>Bạn Đã Bị Vượt Giá</title>
-    <style>
-        body {
-            font-family: 'Roboto', 'Be Vietnam Pro', Helvetica, Arial, sans-serif;
-            background-color: #F3F4F6; /* Slate 100 */
-            margin: 0;
-            padding: 0;
-            color: #475569; /* Slate 600 */
-        }
-        .container {
-            max-width: 600px;
-            margin: 40px auto;
-            background-color: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .header {
-            background: linear-gradient(135deg, #EF4444 0%, #B91C1C 100%); /* Red 500 to Red 700 (Keep Red for Urgency but styled nicely) */
-            color: white;
-            padding: 32px 24px;
-            text-align: center;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-        }
-        .content {
-            padding: 32px 24px;
-        }
-        .warning-box {
-            background-color: #FEF2F2; /* Red 50 */
-            border-left: 4px solid #EF4444; /* Red 500 */
-            padding: 20px;
-            margin: 24px 0;
-            border-radius: 6px;
-        }
-        .info-box {
-            background-color: #F8FAFC; /* Slate 50 */
-            padding: 20px;
-            margin: 24px 0;
-            border-radius: 8px;
-            border: 1px solid #E2E8F0;
-        }
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid #E2E8F0;
-        }
-        .info-row:last-child {
-            border-bottom: none;
-        }
-        .label {
-            font-weight: 600;
-            color: #64748B;
-        }
-        .value {
-            color: #1E293B;
-            font-weight: 500;
-        }
-        .price {
-            color: #EF4444; /* Red 500 */
-            font-size: 22px;
-            font-weight: 700;
-        }
-        .button {
-            display: inline-block;
-            padding: 14px 32px;
-            background-color: #EF4444; /* Red 500 */
-            color: white;
-            text-decoration: none;
-            border-radius: 9999px;
-            margin: 24px 0;
-            font-weight: 600;
-            box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.5);
-            transition: background-color 0.2s;
-        }
-        .button:hover {
-            background-color: #DC2626; /* Red 600 */
-        }
-        .footer {
-            background-color: #F8FAFC;
-            padding: 24px;
-            text-align: center;
-            color: #94A3B8;
-            font-size: 12px;
-            border-top: 1px solid #E2E8F0;
-        }
-    </style>
+    <title>Bạn Đã Bị Vượt Mức Giá</title>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Bạn Đã Bị Vượt Giá!</h1>
-        </div>
-        <div class="content">
-            <p>Xin chào <strong style="color: #1E293B;">{{previousBidderName}}</strong>,</p>
-            
-            <div class="warning-box">
-                <p style="margin: 0; font-weight: 600; color: #991B1B;">
-                    Có người vừa đặt giá cao hơn bạn cho sản phẩm: <strong>{{productTitle}}</strong>
-                </p>
-            </div>
+<body style="margin: 0; padding: 0; background-color: #F8FAFC; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; -webkit-font-smoothing: antialiased; color: #334155;">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #F8FAFC; padding: 30px 10px;">
+        <tr>
+            <td align="center">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #E2E8F0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                    <!-- Header -->
+                    <tr>
+                        <td align="center" style="background: linear-gradient(135deg, #EA580C 0%, #D97706 100%); padding: 32px 24px; color: #ffffff;">
+                            <div style="font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; opacity: 0.9;">🔨 Sàn Đấu Giá Online</div>
+                            <h1 style="margin: 0; font-size: 24px; font-weight: 700; color: #ffffff; line-height: 1.3;">Bạn Đã Bị Vượt Giá Đặt!</h1>
+                        </td>
+                    </tr>
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 32px 24px;">
+                            <p style="margin: 0 0 16px 0; font-size: 15px; line-height: 1.6; color: #334155;">Xin chào <strong style="color: #0F172A;">{{previousBidderName}}</strong>,</p>
+                            <p style="margin: 0 0 24px 0; font-size: 15px; line-height: 1.6; color: #475569;">Một người dùng khác vừa ra giá cao hơn mức giá của bạn đối với sản phẩm <strong>{{productTitle}}</strong>.</p>
 
-            <div class="info-box">
-                <h2 style="margin: 0 0 15px 0; color: #475569; font-size: 18px;">Chi Tiết</h2>
-                <div class="info-row">
-                    <span class="label">Giá của bạn:</span>
-                    <span class="value">{{yourBidAmount}} VNĐ</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Giá hiện tại:</span>
-                    <span class="value price">{{currentPrice}} VNĐ</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Chênh lệch:</span>
-                    <span class="value" style="color: #EF4444;">+{{difference}} VNĐ</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Thời gian:</span>
-                    <span class="value">{{timestamp}}</span>
-                </div>
-            </div>
+                            <!-- Alert Box -->
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #FFF7ED; border-left: 4px solid #EA580C; border-radius: 6px; margin-bottom: 24px;">
+                                <tr>
+                                    <td style="padding: 18px 20px;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="left" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #9A3412;">Giá tối đa trước đó của bạn:</td>
+                                                <td align="right" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #9A3412;">{{yourBidAmount}} VNĐ</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #C2410C;">Giá dẫn đầu mới:</td>
+                                                <td align="right" style="padding: 6px 0; font-size: 18px; font-weight: 700; color: #EA580C;">{{currentPrice}} VNĐ</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" style="padding: 6px 0; font-size: 14px; font-weight: 600; color: #9A3412;">Thời gian kết thúc:</td>
+                                                <td align="right" style="padding: 6px 0; font-size: 14px; color: #475569;">{{auctionEndTime}}</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
 
-            <p style="font-weight: 600; color: #1E293B; text-align: center;">
-                Đừng để mất cơ hội! Hãy đặt giá cao hơn ngay để giành chiến thắng.
-            </p>
+                            <!-- Button -->
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 24px;">
+                                <tr>
+                                    <td align="center">
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="center" style="background-color: #EA580C; border-radius: 50px; padding: 14px 32px;">
+                                                    <a href="{{productUrl}}" target="_blank" style="font-size: 15px; font-weight: 700; color: #ffffff; text-decoration: none; display: inline-block;">Nâng Giá Để Giữ Vị Trí Dẫn Đầu &rarr;</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
 
-            <div style="text-align: center;">
-                <a href="{{productUrl}}" class="button">Đặt Giá Ngay</a>
-            </div>
-
-            <p style="margin-top: 24px; font-size: 13px; color: #64748B; text-align: center;">
-                Đấu giá sẽ kết thúc vào: <strong>{{auctionEndTime}}</strong>
-            </p>
-        </div>
-        <div class="footer">
-            <p>Đây là email tự động, vui lòng không trả lời.</p>
-            <p>&copy; 2025 Auction Platform. All rights reserved.</p>
-        </div>
-    </div>
+                            <p style="margin: 0; font-size: 13px; color: #94A3B8; text-align: center; line-height: 1.5;">
+                                Hoặc truy cập liên kết: <a href="{{productUrl}}" style="color: #EA580C; text-decoration: none;">{{productUrl}}</a>
+                            </p>
+                        </td>
+                    </tr>
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center" style="background-color: #F1F5F9; padding: 20px; border-top: 1px solid #E2E8F0; font-size: 12px; color: #94A3B8; line-height: 1.5;">
+                            <p style="margin: 0 0 4px 0;">Email này được gửi tự động từ hệ thống Sàn Đấu Giá Online. Vui lòng không trả lời trực tiếp.</p>
+                            <p style="margin: 0;">&copy; 2026 Sàn Đấu Giá Online. All rights reserved.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
