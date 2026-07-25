@@ -386,7 +386,7 @@ function UserManagement({ searchQuery, setSearchQuery }) {
               <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
                 <div className="w-24 h-24 rounded-full p-1 bg-white/10 shadow-lg ring-2 ring-white/20 flex-shrink-0">
                   <img
-                    src={selectedUser.profileImageUrl || `http://localhost:5001/api/admin/users/${selectedUser._id}/avatar?token=${localStorage.getItem('token')}`}
+                    src={selectedUser.profileImageUrl || `${import.meta.env.VITE_API_URL || "http://localhost:5001/api"}/admin/users/${selectedUser._id}/avatar?token=${localStorage.getItem('token')}`}
                     alt={selectedUser.username}
                     referrerPolicy="no-referrer"
                     onError={(e) => {

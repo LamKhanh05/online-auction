@@ -60,7 +60,11 @@ const getImageUrl = (url) => {
   if (!url) return "/placeholder.svg";
   if (url.startsWith("data:")) return url; // Base64
   if (url.startsWith("http")) return url; // External URL
-  if (url.startsWith("/uploads")) return `http://localhost:5001${url}`; // Local upload
+  if (url.startsWith("/uploads")) {
+    const apiBase = import.meta.env.VITE_API_URL || "http://localhost:5001/api";
+    const domainBase = apiBase.replace(/\/api\/?$/, "");
+    return `${domainBase}${url}`; // Local upload
+  }
   return url;
 };
 

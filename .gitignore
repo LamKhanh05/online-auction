@@ -1,0 +1,41 @@
+# Environment variables
+.env
+*.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env
+
+# Dependencies & virtual environments
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+venv/
+.venv/
+
+# Build and temporary outputs
+dist/
+build/
+.next/
+out/
+result.json
+src/semgrep/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userossc
+*.sln.docstates
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+
+# Project Reports & Temp Docs
+AGENT_KNOWLEDGE.md
+IMPROVEMENTS_ANALYSIS.md
+SENIOR_EVALUATION.md
+SETUP_GUIDE.md
+WALKTHROUGH.md

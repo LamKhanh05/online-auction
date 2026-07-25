@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  // Backend API server chạy ở port 5001
-  baseURL: "http://localhost:5001/api",
+  // Use environment variable or fallback to default port 5001
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5001/api",
   // Don't set default Content-Type - let browser/axios handle it
   withCredentials: true, // Cho phép gửi cookies
 });

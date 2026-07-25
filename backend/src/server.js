@@ -35,9 +35,13 @@ const PORT = process.env.PORT || 5001;
 app.use(compression());
 
 // CORS configuration
+const allowedOrigins = process.env.FRONTEND_URL 
+  ? process.env.FRONTEND_URL.split(",").map(url => url.trim())
+  : ["http://localhost:3000", "http://localhost:5173"];
+
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:5173"],
+    origin: allowedOrigins,
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "x-auth-token"],
